@@ -24,5 +24,17 @@ public class CommonActions {
 
 	}
 
+//HW number 2
+	//1)//img[@id='at-hp-rp-img-m']
+
+	//2)//a[@id='mail-ship-width' and @class='menuitem']
+	
+	//3)//a[@id='login-register-header' or @class='link-reg']
+	
+	//4)//a[text()='Grocery']
+	
+	//5)//a[contains(text(),'Orders')]
+
+
 
 
