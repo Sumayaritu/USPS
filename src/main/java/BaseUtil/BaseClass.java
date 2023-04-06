@@ -12,19 +12,21 @@ import pages.HomePage;
 
 public class BaseClass {
 
-	WebDriver driver;
+	protected WebDriver driver;
 	public HomePage homePage;
 
 	@BeforeMethod
 
 	public void setUp() {
-		System.setProperty("WebDriver.chrome.driver",
-				"C:\\Users\\MainUser\\eclipse-workspace\\com.usps\\driver\\chromedriver.exe");
+		//System.setProperty("WebDriver.chrome.driver",
+			//	"C:\\Users\\MainUser\\eclipse-workspace\\com.usps\\driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/driver/chromedriver.exe");
 		ChromeOptions options=new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");
 		
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
+		//driver.manage().window().fullscreen();
 		driver.manage().deleteAllCookies();
 		driver.get("https://www.usps.com/");
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
