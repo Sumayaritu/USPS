@@ -6,8 +6,8 @@
       <class name="testPages.HomePageTest">
         <methods>
           <include name="tearUp"/>
-          <include name="clickSignInThenClickUserNameThenInputTextTest"/>
           <include name="setUp"/>
+          <include name="logoDisplayedTest"/>
         </methods>
       </class> <!-- testPages.HomePageTest -->
     </classes>

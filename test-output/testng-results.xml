@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="8" total="9" passed="1" failed="0" skipped="0">
+<testng-results ignored="17" total="18" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-05T23:55:20 EDT" name="Default suite" finished-at="2023-04-05T23:55:46 EDT" duration-ms="26176">
+  <suite started-at="2023-04-06T15:33:25 EDT" name="Default suite" finished-at="2023-04-06T15:33:51 EDT" duration-ms="26869">
     <groups>
     </groups>
-    <test started-at="2023-04-05T23:55:20 EDT" name="Default test" finished-at="2023-04-05T23:55:46 EDT" duration-ms="26176">
+    <test started-at="2023-04-06T15:33:25 EDT" name="Default test" finished-at="2023-04-06T15:33:51 EDT" duration-ms="26869">
       <class name="testPages.HomePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testPages.HomePageTest@61001b64]" started-at="2023-04-05T23:55:20 EDT" name="setUp" finished-at="2023-04-05T23:55:32 EDT" duration-ms="12254" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testPages.HomePageTest@4f80542f]" started-at="2023-04-06T15:33:25 EDT" name="setUp" finished-at="2023-04-06T15:33:38 EDT" duration-ms="13649" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="clickSignInThenClickUserNameThenInputTextTest()[pri:0, instance:testPages.HomePageTest@61001b64]" started-at="2023-04-05T23:55:32 EDT" name="clickSignInThenClickUserNameThenInputTextTest" finished-at="2023-04-05T23:55:45 EDT" duration-ms="12717" status="PASS">
+        <test-method signature="use_of_sendKeys_then_click_by_return_key_of_laptop()[pri:0, instance:testPages.HomePageTest@4f80542f]" started-at="2023-04-06T15:33:38 EDT" name="use_of_sendKeys_then_click_by_return_key_of_laptop" finished-at="2023-04-06T15:33:51 EDT" duration-ms="12956" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickSignInThenClickUserNameThenInputTextTest -->
-        <test-method is-config="true" signature="tearUp()[pri:0, instance:testPages.HomePageTest@61001b64]" started-at="2023-04-05T23:55:45 EDT" name="tearUp" finished-at="2023-04-05T23:55:46 EDT" duration-ms="1147" status="PASS">
+        </test-method> <!-- use_of_sendKeys_then_click_by_return_key_of_laptop -->
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:testPages.HomePageTest@4f80542f]" started-at="2023-04-06T15:33:51 EDT" name="tearUp" finished-at="2023-04-06T15:33:51 EDT" duration-ms="203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearUp -->
