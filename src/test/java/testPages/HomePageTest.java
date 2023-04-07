@@ -22,7 +22,7 @@ public class HomePageTest extends BaseClass {
 		homePage.clickSendButton();
 	}
 
-	@Test(enabled = false, priority = 1)
+	@Test(enabled = true, priority = 1)
 	public void clickSignInButtonTest() throws InterruptedException {
 		homePage.clickSignInButton();
 	}
@@ -118,7 +118,7 @@ public class HomePageTest extends BaseClass {
 		Thread.sleep(4000);
 	}
 
-	@Test
+	@Test(enabled = false)
 	public void use_of_sendKeys_then_click_by_return_key_of_laptop() throws InterruptedException {
 		driver.findElement(By.id("login-register-header")).click();
 		Thread.sleep(4000);
@@ -126,6 +126,18 @@ public class HomePageTest extends BaseClass {
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//input[@id=\"username\"]")).sendKeys("Sumaya", Keys.RETURN);
 		Thread.sleep(4000);
+	}
+
+	@Test(enabled = true)
+	public void use_of_nevigate_method() throws InterruptedException {
+		driver.navigate().to("https://www.cvs.com/");
+		Thread.sleep(3000);
+		driver.navigate().back();
+		Thread.sleep(3000);
+		driver.navigate().forward();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		Thread.sleep(3000);
 	}
 
 }
