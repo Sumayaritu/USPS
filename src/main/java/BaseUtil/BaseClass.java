@@ -3,6 +3,7 @@ package BaseUtil;
 import java.time.Duration;
 
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -28,6 +30,8 @@ public class BaseClass {
 	protected Dimension dimension;
 	protected Actions actions;
 	protected Select select;
+	protected JavascriptExecutor js;
+	protected WebDriverWait wait;
 
 	@BeforeMethod
 
@@ -60,6 +64,7 @@ public class BaseClass {
 		config = new Configuration();
 		initDriver();
 		actions=new Actions(driver);
+		js=(JavascriptExecutor)driver;
 		driver.manage().window().maximize();
 		// driver.manage().window().fullscreen();
 		driver.manage().deleteAllCookies();
@@ -69,6 +74,7 @@ public class BaseClass {
 		long explicitlyWait = Long.parseLong(config.getProperties(EXPLICITLY_WAIT));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(pageLoadTime));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitlyWait));
+		wait=new WebDriverWait(driver,Duration.ofSeconds(explicitlyWait));
 		initClasses();
 	}
 

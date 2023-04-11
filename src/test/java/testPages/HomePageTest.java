@@ -5,9 +5,11 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -215,7 +217,7 @@ public class HomePageTest extends BaseClass {
 		Thread.sleep(4000);
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void use_of_select_by_value_method() throws InterruptedException {
 		driver.navigate().to("https://portal.cms.gov/portal/");
 		Thread.sleep(4000);
@@ -226,6 +228,86 @@ public class HomePageTest extends BaseClass {
 		Thread.sleep(4000);
 		select = new Select(forgotUserId);
 		select.selectByValue("1997");
+		Thread.sleep(4000);
+	}
+	
+	@Test(enabled = false)
+
+	public void use_of_javaScriptExecutor_method_in_signInButton() throws InterruptedException {
+		WebElement signInButton=driver.findElement(By.id("login-register-header"));
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click()",signInButton);
+		Thread.sleep(4000);
+	}
+	@Test(enabled = false)
+	public void loggerPositiveMethodTest() throws InterruptedException {
+		homePage.loggerPositiveMethod();
+	}
+	@Test(enabled = false)
+	public void use_of_sendKeys_method_by_javaScriptExecutor_then_click() throws InterruptedException {
+		WebElement signInButton=driver.findElement(By.id("login-register-header"));
+		Thread.sleep(4000);
+		js.executeScript("arguments[0].click()",signInButton);
+		Thread.sleep(4000);
+		WebElement userName=driver.findElement(By.xpath("//input[@name=\"username\"]"));
+		js.executeScript("arguments[0].click()",userName);
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].value='Sumaya' ",userName );
+		Thread.sleep(4000);
+	}
+	@Test(enabled = false)
+	public void use_of_hidden_element_by_selenium_method() throws InterruptedException {
+		driver.navigate().to("https://enthrallit.com/");
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//a[text()='Selenium']")).click();
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//button[@id=\"formButton3\"]")).click();
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//input[@class='form-control']//parent::form[@id='form3']")).sendKeys("April2023");
+	}
+	@Test(enabled = false)
+	public void use_of_hidden_element_by_JavascriptExecutor() throws InterruptedException {
+		driver.navigate().to("https://enthrallit.com/");
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//a[text()='Selenium']")).click();
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//button[@id=\"formButton3\"]")).click();
+		WebElement searchField=driver.findElement(By.xpath("//input[@class='form-control']//parent::form[@id='form3']"));
+		js.executeScript("arguments[0].value='April2023' ", searchField);
+	}
+	@Test(enabled = false)
+	public void use_of_explicitly_wait_number1() throws InterruptedException {
+		driver.navigate().to("https://www.mountsinai.org/");
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		Thread.sleep(4000);
+		WebElement patientCare=	driver.findElement(By.xpath("//a[normalize-space(text())='Patient Care' and @class='hidden-xs dropdown']"));
+		wait.until(ExpectedConditions.visibilityOf(patientCare)).click();
+	}
+	@Test(enabled = false)
+	public void use_of_explicitly_wait_number2() throws InterruptedException {
+		driver.navigate().to("https://www.mountsinai.org/");
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+		Thread.sleep(4000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(" //a[normalize-space(text())='Request an Appointment' and @class='hidden-xs dropdown']"))).click();
+	}
+	@Test(enabled = false)
+	public void use_of_scrollDown_and_scrollUp_by_actions_class() throws InterruptedException {
+		actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
+		Thread.sleep(4000);
+		actions.keyDown(Keys.CONTROL).sendKeys(Keys.HOME).perform();
+		Thread.sleep(4000);
+	}
+	@Test
+	public void use_of_scrollDown_and_scrollUp_by_javaScriptExecutor() throws InterruptedException {
+		js.executeScript("window.scrollBy(0,900)","");//Scroll Down till 2000 px
+		Thread.sleep(4000);
+		js.executeScript("window.scrollBy(0,-900)","");//Scroll Up 
 		Thread.sleep(4000);
 	}
 

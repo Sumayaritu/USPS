@@ -1,15 +1,23 @@
 package common;
 
 import org.openqa.selenium.NoSuchElementException;
+
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import reporting.Logs;
 
 public class CommonActions {
 	
 		public static void clickElement(WebElement element) {
 			try {
 				element.click();
+				Logs.log(element + "<-------->has been clicked");
+				Assert.assertTrue(true);
 			} catch (NoSuchElementException | NullPointerException e) {
 				e.printStackTrace();
+				Logs.log(element +"<-----------> has not been found");
+				Assert.fail();
 			}
 
 		}
@@ -17,24 +25,16 @@ public class CommonActions {
 		public static void inputText(WebElement element, String input) {
 			try {
 				element.sendKeys(input);
+				Logs.log(input+ "<--------> has been put into<------->"+element);
+				Assert.assertTrue(true);
 			} catch (NoSuchElementException | NullPointerException e) {
 				e.printStackTrace();
+				Logs.log(element + "has not been found so couldn't put the input");
+				Assert.fail();
 			}
 		}
 
 	}
-
-//HW number 2
-	//1)//img[@id='at-hp-rp-img-m']
-
-	//2)//a[@id='mail-ship-width' and @class='menuitem']
-	
-	//3)//a[@id='login-register-header' or @class='link-reg']
-	
-	//4)//a[text()='Grocery']
-	
-	//5)//a[contains(text(),'Orders')]
-
 
 
 

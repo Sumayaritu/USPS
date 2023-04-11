@@ -6,7 +6,7 @@
       <class name="testPages.HomePageTest">
         <methods>
           <include name="tearUp"/>
-          <include name="use_of_select_by_index_method"/>
+          <include name="use_of_explicitly_wait_number2"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- testPages.HomePageTest -->

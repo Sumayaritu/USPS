@@ -65,6 +65,14 @@ public class HomePage {
 		inputText(userName,"Sumaya123");
 		Thread.sleep(4000);
 	}
+	public void loggerPositiveMethod() throws InterruptedException {
+		clickElement(signInButton);
+		Thread.sleep(4000);
+		clickElement(userName);
+		Thread.sleep(4000);
+		inputText(userName,"Sumaya123");
+		Thread.sleep(4000);
+	}
 
 
 }
